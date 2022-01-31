@@ -1,2 +1,25 @@
+ nav {
+   background: #4056a1;
+   padding: 1.5em;
+   color: #FFFFFF;
+   justify-content: flex-start;
+   height: 120px;
+   
+ }
 
+ nav > span {
+  font-family: 'Bungee', cursive;
+  font-size: 1.5em;
+ }
+
+ nav > div {
+   display: flex;
+   justify-content: flex-end;
+   font-weight: 350;
+   
+ }
+
+ nav > div > i {
+   color: red;
+ }
  
