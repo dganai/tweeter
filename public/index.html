@@ -34,12 +34,15 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
+
+    <!-- Image header -->
+    
     <header>
       <div>
         <img src="/images/profile-hex.png">
       </div>
       <br>
-      <div class="name">
+      <div>
         <h2>Wendy Byrde</h2>
       </div>
     </header>
@@ -49,13 +52,17 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
-    <p>this is a testmkdfkfjhkjhgkjhfgd
-      fdhing gnjhjiuhs snfhbhsbhfbnnfjf
-      dbfjhdnj dfdhnfhjnfijhininignhing gnjhjiuhs snfhbhsbhfbnnfjf
-njdhsf shjbfgtswbfhj fgndjk fdhnfhjnfijhininignhing gnjhjiuhs snfhbhsbhfbnnfjf
-
-      fdhnfhjnfijhininignhing gnjhjiuhs snfhbhsbhfbnnfjf
-
-    </p>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form>
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+  
   </body>
 </html>
