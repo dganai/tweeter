@@ -1,10 +1,12 @@
- nav {
+  nav {
    display: flex;
    background: #4056a1;
    padding: 1.5em;
    color: #FFFFFF;
    justify-content: space-between;
    height: 120px;
+   position: relative;
+   z-index: 10;
   
  }
 
@@ -28,6 +30,8 @@ nav > div {
 .arrow i {
   color: red;
 }
+
+
 
 
  
