@@ -6,15 +6,18 @@
    justify-content: space-between;
    height: 120px;
    width: 100%;
-   position: sticky;
+   position: fixed;
    z-index: 100;
-   top: 0;
+   align-items: center;
+   
   
  }
 
  nav > span {
   font-family: 'Bungee', cursive;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  justify-content: center;
+  margin-top: 0 auto;
 }
 
 nav > div {
@@ -23,6 +26,7 @@ nav > div {
   font-weight: 350;
   flex-direction: column;
   align-items: center;
+  margin-top: 0 auto;
 }
 
 
