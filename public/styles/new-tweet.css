@@ -1,26 +1,25 @@
-section {
+.new-tweet {
   display:flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-
 }
+
+
 form {
   width: 70%;
 }
 
-#tweet-text{
-  background-color: #f4f1ec;
-  width: 100%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 5px solid #545149;
- 
-}
 
 textarea {
   font-size: 1em;
+  border: none;
+  background: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 5px solid #545149;
+
+ 
  
 }
 
@@ -31,7 +30,6 @@ button {
   font-family: 'Bungee', cursive;
   font-size: 0.9em;
   border: none;
-  
   justify-content: center;
   
 }
@@ -42,4 +40,6 @@ button {
   font-family: 'Bungee', cursive;
   font-size: 0.9em;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
+
