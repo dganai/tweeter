@@ -2,26 +2,41 @@
   display:flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  
+  
 }
 
 
-form {
-  width: 70%;
+
+.new-tweet form {
+display: flex;
+justify-content: center;
+flex-direction: column;
 }
 
 
-textarea {
-  font-size: 1em;
-  border: none;
+
+.new-tweet textarea {
+
+  border-width: 0 0 8px 0;
   background: inherit;
-  width: 100%;
-  border: none;
-  border-bottom: 5px solid #545149;
-
+  border-color: #545149;
+  height: 100px;
+  width: 700px;
  
+
+
+}
+
+
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
  
 }
+
+
 
 button {
   display: flex;
@@ -29,6 +44,7 @@ button {
   background-color: #4056a1;
   font-family: 'Bungee', cursive;
   font-size: 0.9em;
+  align-items: center;
   border: none;
   justify-content: center;
   
