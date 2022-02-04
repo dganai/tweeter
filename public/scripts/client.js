@@ -8,6 +8,9 @@
 // Fake data taken from initial-tweets.json
 $(document).ready(function() {
 
+  // hide tweet err message on load
+  $("div.error").hide();
+
   // escape function for handling XSS
   const escape = function(str) {
     let div = document.createElement("div");
@@ -71,15 +74,24 @@ $(document).ready(function() {
     // form validation - check if tweet submitted is valid or not
     let $tweetText = $("#tweet-text").val();
 
+    // hide tweet err message before submit
+    $("new-tweet textare").removeClass("error");
+    $("div.error").hide();
+     
+
     // if blank input
     if (!$tweetText) {
-      alert("Oh no! You must type something before submitting a tweet!");
+      $("div.error > p").html("Oh no! You must type something before submitting a tweet!");
+      $("div.error").slideDown(175);
+      $(".new-tweet textarea").addClass("error");
       return;
     }
    
     // if input is more than 140 characters
     if ($tweetText.length > 140) {
-      alert("Uh oh! Your tweet has surpassed the character limit.");
+      $("div.error > p").html("Uh oh! Your tweet has surpassed the character limit.");
+      $(".new-tweet textarea").addClass("error");
+      $("div.error").slideDown(175);
       return;
     }
 
