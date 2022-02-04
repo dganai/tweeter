@@ -4,12 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//const { render } = require("express/lib/response");
-
-
 
 // Fake data taken from initial-tweets.json
 $(document).ready(function () {
+
+
 
 const createTweetElement = function (tweet) {
   const $tweet = $(`
@@ -46,7 +45,7 @@ const renderTweets = function(tweets) {
       let $tweet = createTweetElement(tweet);
       
       // takes return value and appends to tweets container
-      $('.tweets-container').append($tweet);
+      $('.tweets').append($tweet);
     
     
     }
