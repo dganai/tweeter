@@ -58,17 +58,20 @@ $(document).ready(function() {
     // prevent default behavior
     event.preventDefault();
 
-    // form validation - check if tweet submitted is valid or not 
+    // form validation - check if tweet submitted is valid or not
     let $tweetText = $("#tweet-text").val();
 
     // if blank input
-    if(!$tweetText) {
+    if (!$tweetText) {
       alert("Oh no! You must type something before submitting a tweet!");
       return;
     }
-
    
-    
+    // if input is more than 140 characters
+    if ($tweetText.length > 140) {
+      alert("Uh oh! Your tweet has surpassed the character limit.");
+      return;
+    }
 
 
     // serialize data
