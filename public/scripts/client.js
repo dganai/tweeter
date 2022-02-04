@@ -58,6 +58,19 @@ $(document).ready(function() {
     // prevent default behavior
     event.preventDefault();
 
+    // form validation - check if tweet submitted is valid or not 
+    let $tweetText = $("#tweet-text").val();
+
+    // if blank input
+    if(!$tweetText) {
+      alert("Oh no! You must type something before submitting a tweet!");
+      return;
+    }
+
+   
+    
+
+
     // serialize data
     let $formData = $(this).serialize();
 
