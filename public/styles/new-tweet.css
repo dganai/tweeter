@@ -23,6 +23,7 @@ flex-direction: column;
   border-color: #545149;
   height: 100px;
   width: 700px;
+  margin-top: 20px;
  
 
 
@@ -47,6 +48,7 @@ button {
   align-items: center;
   border: none;
   justify-content: center;
+  cursor: pointer;
   
 }
 
@@ -59,3 +61,7 @@ button {
   margin-bottom: 20px;
 }
 
+.error {
+  color: red;
+  font-size: 1em;
+}
