@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,21 +39,20 @@
 
     <!-- Image header -->
     
-    <header>
+    <header class="header-main">
       <div>
         <img src="/images/profile-hex.png">
       </div>
       <br>
       <div>
-        <h2>Wendy Byrde</h2>
+        <h2><b>Wendy</b> Byrde</h2>
       </div>
     </header>
       
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets/">
         <label for="tweet-text"></label>
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -61,7 +61,12 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+
+
+      <section class="tweets">
+        
     </section>
+    </main>
   
   </body>
 </html>
