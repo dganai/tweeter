@@ -83,12 +83,18 @@ $('.new-tweet > form').submit(function(event) {
   
   // prevent default behavior
   event.preventDefault();
-  
-})
+
+  // serialize data
+  let $formData = $(this).serialize();
+
+  // post request that sends serialized data form $formData to server
+  $.post("/tweets", $formData);
+
+});
 
 
 
-//renderTweets(data);
+renderTweets(data);
 
 })
 
