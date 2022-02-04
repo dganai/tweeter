@@ -35,7 +35,7 @@ const data = [
 
 $(document).ready(function () {
 
-  const createTweetElement = function (tweetData) {
+  const createTweetElement = function (tweet) {
     const $tweet = $(`
     <article class="tweet">
           <header>
