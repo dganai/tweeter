@@ -27,7 +27,7 @@ $(document).ready(function() {
   </div>
   <p>${tweet['user'].handle}</p>
   </header>
-  <p>${tweet['content'].text} </p>
+  <p>${escape(tweet['content'].text)} </p>
   <footer>
   <p>${timeago.format(tweet['created_at'])}</p>  
   <div>
