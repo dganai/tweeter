@@ -6,12 +6,12 @@
 
 
 // Fake data taken from initial-tweets.json
-$(document).ready(function () {
+$(document).ready(function() {
 
 
 
-const createTweetElement = function (tweet) {
-  const $tweet = $(`
+  const createTweetElement = function(tweet) {
+    const $tweet = $(`
   <article class="tweet">
   <header>
   <div>
@@ -29,17 +29,17 @@ const createTweetElement = function (tweet) {
   <i class="fa-solid fa-heart"></i>
   </div>
   </footer>
-  </article`)
+  </article`);
   
-  return $tweet;
+    return $tweet;
   
-};
+  };
 
-// function takes in an array of tweet objects and appends to the #tweets-container
-const renderTweets = function(tweets) {
+  // function takes in an array of tweet objects and appends to the #tweets-container
+  const renderTweets = function(tweets) {
 
-  // loops through tweets
-  for (const tweet of tweets) {
+    // loops through tweets
+    for (const tweet of tweets) {
 
       // calls createTweetElement for each tweet
       let $tweet = createTweetElement(tweet);
@@ -50,37 +50,37 @@ const renderTweets = function(tweets) {
     
     }
     
-}
+  };
 
-// event listener for submit tweet button
-$('.new-tweet > form').submit(function(event) {
+  // event listener for submit tweet button
+  $('.new-tweet > form').submit(function(event) {
   
-  // prevent default behavior
-  event.preventDefault();
+    // prevent default behavior
+    event.preventDefault();
 
-  // serialize data
-  let $formData = $(this).serialize();
+    // serialize data
+    let $formData = $(this).serialize();
 
-  // post request that sends serialized data form $formData to server
-  $.post("/tweets", $formData);
+    // post request that sends serialized data form $formData to server
+    $.post("/tweets", $formData);
+
+  });
+
+  // function for fetching tweets from /tweets
+
+  const loadTweets = function() {
+    $.getJSON('/tweets', function(data) {
+      renderTweets(data);
+    });
+  };
+
+
+
+
+  loadTweets();
+
+
+
 
 });
-
-// function for fetching tweets from /tweets
-
-const loadTweets = function () {
-  $.getJSON('/tweets', function(data) {
-    renderTweets(data)
-  })
-}
-
-
-
-
- loadTweets();
-
-
-
-
-})
 
