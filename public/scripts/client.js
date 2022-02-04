@@ -11,9 +11,9 @@ $(document).ready(function() {
   // escape function for handling XSS
   const escape = function(str) {
     let div = document.createElement("div");
-    x.appendChild(document.createTextNode(str));
-    return div.innerHTML
-  }
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
 
 
@@ -86,26 +86,24 @@ $(document).ready(function() {
 
     // serialize data once form is validated from above
     let $formData = $(this).serialize();
-    $.ajax({
-      url: "/tweets",
-      type: "POST",
-      data: $formData,
-    });
+    
     // post request that sends serialized data form $formData to server
   
     $.post("/tweets", $formData);
    
     // once post req succesful -> get submitted tweet from /tweets endpoint
+
     $.getJSON("/tweets")
       .then(function(data) {
-          
+        
         // take last tweet from /tweets
         let $lastTweet = data[data.length - 1];
-          
+        
         // take new tweet element and add to tweet container
         let $newTweet = createTweetElement($lastTweet);
         $('.tweets').prepend($newTweet);
-          
+        
+      
 
       });
     
