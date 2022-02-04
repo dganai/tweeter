@@ -7,6 +7,7 @@
 
 
 // Fake data taken from initial-tweets.json
+$(document).ready(function () {
 const data = [
   {
     "user": {
@@ -33,8 +34,34 @@ const data = [
   }
 ]
 
-$(document).ready(function () {
 
+
+const createTweetElement = function (tweet) {
+  const $tweet = $(`
+  <article class="tweet">
+  <header>
+  <div>
+  <img src=${tweet['user'].avatars}>    
+  <p>${tweet['user'].name}</p>
+  </div>
+  <p>${tweet['user'].handle}</p>
+  </header>
+  <p>${tweet['content'].text} </p>
+  <footer>
+  <p>${timeago.format(tweet['created_at'])}</p>  
+  <div>
+  <i class="fa-solid fa-flag"></i> 
+  <i class="fa-solid fa-retweet"></i>  
+  <i class="fa-solid fa-heart"></i>
+  </div>
+  </footer>
+  </article`)
+  
+  return $tweet;
+  
+};
+
+// function takes in an array of tweet objects and appends to the #tweets-container
 const renderTweets = function(tweets) {
 
   // loops through tweets
@@ -51,34 +78,17 @@ const renderTweets = function(tweets) {
     
 }
 
-  const createTweetElement = function (tweet) {
-    const $tweet = $(`
-    <article class="tweet">
-          <header>
-            <div>
-              <img src=${tweet['user'].avatars}>    
-              <p>${tweet['user'].name}</p>
-            </div>
-            <p>${tweet['user'].handle}</p>
-          </header>
-          <p>${tweet['content'].text} </p>
-          <footer>
-          <p>${timeago.format(tweet['created_at'])}</p>  
-          <div>
-            <i class="fa-solid fa-flag"></i> 
-            <i class="fa-solid fa-retweet"></i>  
-            <i class="fa-solid fa-heart"></i>
-          </div>
-          </footer>
-        </article`)
+// event listener for submit tweet button
+$('.new-tweet > form').submit(function(event) {
+  
+  // prevent default behavior
+  event.preventDefault();
+  
+})
 
-        return $tweet;
 
-  }
 
-// function takes in an array of tweet objects and appends to the #tweets-container
-
+//renderTweets(data);
 
 })
-renderTweets(data);
 
