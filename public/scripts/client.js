@@ -52,12 +52,15 @@ $(document).ready(function() {
     
   };
 
+
+
+  
+
   // event listener for submit tweet button
   $('.new-tweet > form').submit(function(event) {
-  
     // prevent default behavior
     event.preventDefault();
-
+  
     // form validation - check if tweet submitted is valid or not
     let $tweetText = $("#tweet-text").val();
 
@@ -74,13 +77,33 @@ $(document).ready(function() {
     }
 
 
-    // serialize data
+    // serialize data once form is validated from above
     let $formData = $(this).serialize();
 
     // post request that sends serialized data form $formData to server
-    $.post("/tweets", $formData);
+  
+    $.post("/tweets", $formData); 
+   
+      // once post req succesful -> get submitted tweet from /tweets endpoint
+      .then(function() {
+        $.getJSON("/tweets") 
+        .then(function(data) {
+          
+          // take last tweet from /tweets
+          let $lastTweet = data[data.length - 1];
+          
+          // take new tweet element and add to tweet container
+          let $newTweet = createTweetElement($lastTweet);
+          $('.tweets').prepend($newTweet);
+          
 
-  });
+        })
+      })
+
+
+
+
+    });
 
   // function for fetching tweets from /tweets
 
