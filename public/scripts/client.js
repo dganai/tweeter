@@ -8,6 +8,13 @@
 // Fake data taken from initial-tweets.json
 $(document).ready(function() {
 
+  // escape function for handling XSS
+  const escape = function(str) {
+    let div = document.createElement("div");
+    x.appendChild(document.createTextNode(str));
+    return div.innerHTML
+  }
+
 
 
   const createTweetElement = function(tweet) {
