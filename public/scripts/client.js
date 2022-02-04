@@ -35,6 +35,22 @@ const data = [
 
 $(document).ready(function () {
 
+const renderTweets = function(tweets) {
+
+  // loops through tweets
+  for (const tweet of tweets) {
+
+      // calls createTweetElement for each tweet
+      let $tweet = createTweetElement(tweet);
+      
+      // takes return value and appends to tweets container
+      $('.tweets-container').append($tweet);
+    
+    
+    }
+    
+}
+
   const createTweetElement = function (tweet) {
     const $tweet = $(`
     <article class="tweet">
@@ -63,8 +79,6 @@ $(document).ready(function () {
 // function takes in an array of tweet objects and appends to the #tweets-container
 
 
-
-
-
-
 })
+renderTweets(data);
+
