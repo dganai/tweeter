@@ -1,0 +1,51 @@
+@media only screen and (min-width:1024px) {
+    body {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 130px;
+   
+  }
+ 
+  main {
+  margin: 0 auto;
+   font-size: 80%;
+
+  }
+
+  .new-tweet textarea {
+    display: inline-block;
+   
+    
+
+    
+   
+  }
+
+  .tweet {
+   display: inline-block;
+   
+  }
+
+ 
+
+  .header-main {
+     display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 170px;
+    z-index: 99;
+    height: 300px;
+    width: 80%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 50px; 
+    
+  }
+
+ 
+
+  
+
+  
+  
+}

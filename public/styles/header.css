@@ -1,6 +1,6 @@
 .header-main {
   height: 500px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,3 +24,7 @@ background-image: url("https://www.transparenttextures.com/patterns/light-gray.p
   font-weight: 350;
   margin-top: 0px;
 }
+
+
+
+

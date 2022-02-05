@@ -1,34 +1,37 @@
 .new-tweet {
-  display:flex;
-  flex-direction: column;
+  
+  display: flex;
+  flex-flow: row wrap;
   align-items: center;
-  
-  
+  justify-content: center;
+  width: 100%;
 }
 
 
 
-.new-tweet form {
-display: flex;
-justify-content: center;
-flex-direction: column;
-}
 
 
 
 .new-tweet textarea {
 
-  border-width: 0 0 8px 0;
+  border-width: 0 0 5px 0;
   background: inherit;
   border-color: #545149;
-  height: 100px;
-  width: 700px;
-  margin-top: 20px;
+  height: 80px;
+  width: 75vw;
+  margin-top: 40px;
+  resize: none;
+  overflow: auto;
+
+
  
 
 
 }
 
+.new-tweet textarea:focus {
+  outline: none;
+}
 
 .new-tweet div {
   display: flex;
@@ -36,8 +39,6 @@ flex-direction: column;
   padding-top: 0.5em;
  
 }
-
-
 
 button {
   display: flex;
@@ -47,7 +48,7 @@ button {
   font-size: 0.9em;
   align-items: center;
   border: none;
-  justify-content: center;
+  justify-content: space-between;
   cursor: pointer;
   
 }
@@ -57,11 +58,18 @@ button {
   justify-content: space-between;
   font-family: 'Bungee', cursive;
   font-size: 0.9em;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  
 }
 
-.error {
+
+
+div.error {
+  margin-top: 20px;
+  border: 3px solid red;
   color: red;
-  font-size: 1em;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }

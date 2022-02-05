@@ -1,6 +1,7 @@
 article.tweets {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
  
   
@@ -14,24 +15,24 @@ article.tweets {
 }
 
 
-.tweet-area {
-  padding: 20px 110px;
+p.tweet-area {
+  padding: 20px 20px 35px;
   margin: 20px;
 
 }
 
 
-article.tweet {
+.tweet {
   border: 3px solid;
   padding: 10px;
   margin: 25px 0;
- width: 100%;
+  width: 100%;
   transition: 0.15s ease-in-out;
   
 }
 
 
-article.tweet:hover{
+.tweet:hover{
   box-shadow: 10px 10px #D3D3D3;
 }
 
