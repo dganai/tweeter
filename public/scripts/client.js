@@ -20,26 +20,26 @@ $(document).ready(function() {
 
 
 
-  const createTweetElement = function(tweet) {
-    const $tweet = $(`
-  <article class="tweet">
-  <header>
-  <div>
-  <img src=${tweet['user'].avatars}>    
-  <p>${tweet['user'].name}</p>
-  </div>
-  <p>${tweet['user'].handle}</p>
-  </header>
-  <p>${escape(tweet['content'].text)} </p>
-  <footer>
-  <p>${timeago.format(tweet['created_at'])}</p>  
-  <div>
-  <i class="fa-solid fa-flag"></i> 
-  <i class="fa-solid fa-retweet"></i>  
-  <i class="fa-solid fa-heart"></i>
-  </div>
-  </footer>
-  </article`);
+const createTweetElement = function(tweet) {
+  const $tweet = $(`
+    <article class="tweet">
+      <header>
+        <div>
+          <img src=${tweet['user'].avatars}>    
+          <p>${tweet['user'].name}</p>
+        </div>
+        <p>${tweet['user'].handle}</p>
+      </header>
+        <p>${escape(tweet['content'].text)} </p>
+      <footer>
+        <p>${timeago.format(tweet['created_at'])}</p>  
+        <div>
+          <i class="fa-solid fa-flag"></i> 
+          <i class="fa-solid fa-retweet"></i>  
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+    </article`);
   
     return $tweet;
   
@@ -104,24 +104,24 @@ $(document).ready(function() {
     $.post("/tweets", $formData)
    
     // once post req succesful -> get submitted tweet from /tweets endpoint
-    .then(function () {
-    $.getJSON("/tweets")
-      .then(function(data) {
+      .then(function() {
+        $.getJSON("/tweets")
+          .then(function(data) {
         
-        // take last tweet from /tweets
-        let $lastTweet = data[data.length - 1];
+            // take last tweet from /tweets
+            let $lastTweet = data[data.length - 1];
         
-        // take new tweet element and add to tweet container
-        let $newTweet = createTweetElement($lastTweet);
-        $('.tweets').prepend($newTweet);
-      });
+            // take new tweet element and add to tweet container
+            let $newTweet = createTweetElement($lastTweet);
+            $('.tweets').prepend($newTweet);
+          });
       
 
       });
     
-      // clear form and reset char count
-      $(this).children("textarea").val("");
-      $(this).children('output').html("140");
+    // clear form and reset char count
+    $(this).children("textarea").val("");
+    $(this).children('output').html("140");
 
 
 
