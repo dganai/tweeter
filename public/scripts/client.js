@@ -75,7 +75,7 @@ $(document).ready(function() {
     let $tweetText = $("#tweet-text").val();
 
     // hide tweet err message before submit
-    $("new-tweet textare").removeClass("error");
+    $("new-tweet textarea").removeClass("error");
     $("div.error").hide();
      
 
@@ -101,10 +101,10 @@ $(document).ready(function() {
     
     // post request that sends serialized data form $formData to server
   
-    $.post("/tweets", $formData);
+    $.post("/tweets", $formData)
    
     // once post req succesful -> get submitted tweet from /tweets endpoint
-
+    .then(function () {
     $.getJSON("/tweets")
       .then(function(data) {
         
@@ -114,11 +114,14 @@ $(document).ready(function() {
         // take new tweet element and add to tweet container
         let $newTweet = createTweetElement($lastTweet);
         $('.tweets').prepend($newTweet);
-        
+      });
       
 
       });
     
+      // clear form and reset char count
+      $(this).children("textarea").val("");
+      $(this).children('output').html("140");
 
 
 
