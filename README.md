@@ -15,6 +15,8 @@ Designed using HTML, CASS, Javascript and jQuery.
 
 !["Screenshot of error message if characters over 140"](https://github.com/dganai/tweeter/blob/master/docs/tweeter3.png?raw=true)
 
+!["Screenshot of desktop design"](https://github.com/dganai/tweeter/blob/master/docs/desktop_view.png?raw=true)
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
