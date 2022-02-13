@@ -100,7 +100,6 @@ const createTweetElement = function(tweet) {
     let $formData = $(this).serialize();
     
     // post request that sends serialized data form $formData to server
-  
     $.post("/tweets", $formData)
    
     // once post req succesful -> get submitted tweet from /tweets endpoint
@@ -129,20 +128,11 @@ const createTweetElement = function(tweet) {
   });
 
   // function for fetching tweets from /tweets
-
-  const loadTweets = function() {
-    $.getJSON('/tweets', function(data) {
-      renderTweets(data);
-    });
-  };
-
-
-
-
+const loadTweets = function() {
+  $.getJSON('/tweets', function(data) {
+    renderTweets(data);
+  });
+};
   loadTweets();
-
-
-
-
 });
 
