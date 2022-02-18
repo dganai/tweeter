@@ -20,8 +20,8 @@ $(document).ready(function() {
 
 
 
-const createTweetElement = function(tweet) {
-  const $tweet = $(`
+  const createTweetElement = function(tweet) {
+    const $tweet = $(`
     <article class="tweet">
       <header>
         <div>
@@ -47,24 +47,17 @@ const createTweetElement = function(tweet) {
 
   // function takes in an array of tweet objects and appends to the #tweets-container
   const renderTweets = function(tweets) {
-
+    
     // loops through tweets
     for (const tweet of tweets) {
-
       // calls createTweetElement for each tweet
       let $tweet = createTweetElement(tweet);
-      
       // takes return value and appends to tweets container
       $('.tweets').append($tweet);
-    
-    
     }
-    
   };
 
 
-
-  
 
   // event listener for submit tweet button
   $('.new-tweet > form').submit(function(event) {
@@ -95,6 +88,17 @@ const createTweetElement = function(tweet) {
       return;
     }
 
+  
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $(this).serialize(),
+    }).then(() => {
+      $(".tweets").empty();
+      loadTweets();
+      $("textarea").val("");
+      $(".counter").html("140");
+    });
 
     // serialize data once form is validated from above
     let $formData = $(this).serialize();
@@ -114,25 +118,16 @@ const createTweetElement = function(tweet) {
             let $newTweet = createTweetElement($lastTweet);
             $('.tweets').prepend($newTweet);
           });
-      
-
       });
-    
-    // clear form and reset char count
-    $(this).children("textarea").val("");
-    $(this).children('output').html("140");
-
-
-
 
   });
 
   // function for fetching tweets from /tweets
-const loadTweets = function() {
-  $.getJSON('/tweets', function(data) {
-    renderTweets(data);
-  });
-};
+  const loadTweets = function() {
+    $.get('/tweets', function(data) {
+      renderTweets(data);
+    });
+  };
   loadTweets();
 });
 
