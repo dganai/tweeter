@@ -9,11 +9,9 @@ Designed using HTML, CASS, Javascript and jQuery.
 
 ## Screenshots
 
-!["Screenshot of nav, header, and tweet box"](https://github.com/dganai/tweeter/blob/master/docs/tweeter1.png?raw=true)
+!["Screenshot of nav, header, and tweet box"](https://github.com/dganai/tweeter/blob/master/docs/reg_view.png?raw=true)
 
-!["Screenshot of tweets"](https://github.com/dganai/tweeter/blob/master/docs/tweeter2.png?raw=true)
-
-!["Screenshot of error message if characters over 140"](https://github.com/dganai/tweeter/blob/master/docs/tweeter3.png?raw=true)
+!["Screenshot of error message if text box empty"](https://github.com/dganai/tweeter/blob/master/docs/body_error.png?raw=true)
 
 !["Screenshot of desktop design"](https://github.com/dganai/tweeter/blob/master/docs/desktop_view.png?raw=true)
 
