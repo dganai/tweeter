@@ -6,6 +6,7 @@ $(document).ready(function() {
       .parent()
       .find(".counter")
       .text(140 - this.value.length)
-      .toggleClass("error", 140 - this.value.length < 0);
+      .toggleClass("over-limit", 140 - this.value.length < 0);
   });
+
 });

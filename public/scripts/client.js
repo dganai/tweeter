@@ -47,20 +47,19 @@ $(document).ready(function() {
 
   // function takes in an array of tweet objects and appends to the #tweets-container
   const renderTweets = function(tweets) {
-    
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       let $tweet = createTweetElement(tweet);
       // takes return value and appends to tweets container
-      $('.tweets').append($tweet);
+      $('.tweets').prepend($tweet);
     }
   };
 
 
 
   // event listener for submit tweet button
-  $('.new-tweet > form').submit(function(event) {
+  $('form').submit(function(event) {
     // prevent default behavior
     event.preventDefault();
   
@@ -87,44 +86,24 @@ $(document).ready(function() {
       $("div.error").slideDown(175);
       return;
     }
-
-  
+    
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $(this).serialize(),
     }).then(() => {
-      $(".tweets").empty();
+      $(".tweets-container").empty();
       loadTweets();
       $("textarea").val("");
       $(".counter").html("140");
     });
 
-    // serialize data once form is validated from above
-    let $formData = $(this).serialize();
-    
-    // post request that sends serialized data form $formData to server
-    $.post("/tweets", $formData)
-   
-    // once post req succesful -> get submitted tweet from /tweets endpoint
-      .then(function() {
-        $.getJSON("/tweets")
-          .then(function(data) {
-        
-            // take last tweet from /tweets
-            let $lastTweet = data[data.length - 1];
-        
-            // take new tweet element and add to tweet container
-            let $newTweet = createTweetElement($lastTweet);
-            $('.tweets').prepend($newTweet);
-          });
-      });
-
   });
 
   // function for fetching tweets from /tweets
   const loadTweets = function() {
-    $.get('/tweets', function(data) {
+    
+    $.getJSON('/tweets', function(data) {
       renderTweets(data);
     });
   };

@@ -58,22 +58,25 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-    <section class="new-tweet">
-      <form method="POST" action="/tweets">
-        <div class="error">
-          <i class="fas fa-exclamation-triangle"></i>
-          <p></p>
-          <i class="fas fa-exclamation-triangle"></i>       
+      
+      <section class="new-tweet">
+        <form method="POST" action="/tweets">
+          <div class="error">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p></p>
+            <i class="fas fa-exclamation-triangle"></i>       
+          </div>
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="char-counter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>   
+        <div class="centerTweets">
+          <section class="tweets">    
+          </section>
         </div>
-        <label for="tweet-text"></label>
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class="char-counter">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>   
-      <section class="tweets">    
-    </section>
     </main>
   
   </body>

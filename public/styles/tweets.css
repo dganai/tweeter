@@ -23,19 +23,19 @@ p.tweet-area {
 
 
 .tweet {
+  display: flex;
+  flex-direction: column;
   border: 3px solid;
   padding: 10px;
   margin: 25px 0;
-  width: 100%;
+  width: 40rem;
   transition: 0.15s ease-in-out;
-  
 }
 
 
 .tweet:hover{
   box-shadow: 10px 10px #D3D3D3;
 }
-
 
 article.tweet header, article.tweet footer {
   display: flex;

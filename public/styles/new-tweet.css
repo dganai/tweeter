@@ -18,7 +18,7 @@
   background: inherit;
   border-color: #545149;
   height: 80px;
-  width: 75vw;
+  width: 40rem;
   margin-top: 40px;
   resize: none;
   overflow: auto;
@@ -74,4 +74,6 @@ div.error {
   text-align: center;
 }
 
-
+.over-limit {
+  color: #ff0000;
+}
