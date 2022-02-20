@@ -87,12 +87,14 @@ $(document).ready(function() {
       return;
     }
     
+    event.preventDefault();
+
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $(this).serialize(),
     }).then(() => {
-      $(".tweets-container").empty();
+      $(".tweets").empty();
       loadTweets();
       $("textarea").val("");
       $(".counter").html("140");
@@ -103,7 +105,7 @@ $(document).ready(function() {
   // function for fetching tweets from /tweets
   const loadTweets = function() {
     
-    $.getJSON('/tweets', function(data) {
+    $.get('/tweets', function(data) {
       renderTweets(data);
     });
   };
